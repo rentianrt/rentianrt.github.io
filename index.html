@@ -10,7 +10,7 @@
     <title>Tian Ren | Chemical Engineering Researcher</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preload" as="image" href="assets/hero-lab-v3.png" />
-    <link rel="stylesheet" href="styles.css?v=20260711b" />
+    <link rel="stylesheet" href="styles.css?v=20260712a" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -52,7 +52,7 @@
           </div>
         </div>
         <div class="chemistry-overlay" aria-hidden="true">
-          <svg viewBox="0 0 560 260" role="img">
+          <svg viewBox="0 0 720 340" role="img">
             <defs>
               <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
                 <feGaussianBlur stdDeviation="4" result="blur" />
@@ -61,31 +61,126 @@
                   <feMergeNode in="SourceGraphic" />
                 </feMerge>
               </filter>
+              <filter id="moleculeDepth" x="-40%" y="-40%" width="180%" height="180%">
+                <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#001013" flood-opacity="0.5" />
+              </filter>
+              <radialGradient id="carbon3d" cx="32%" cy="24%" r="72%">
+                <stop offset="0%" stop-color="#f5fbfb" />
+                <stop offset="18%" stop-color="#a5b0b2" />
+                <stop offset="55%" stop-color="#5f6b6d" />
+                <stop offset="100%" stop-color="#20282a" />
+              </radialGradient>
+              <radialGradient id="oxygen3d" cx="32%" cy="24%" r="72%">
+                <stop offset="0%" stop-color="#ffd6cf" />
+                <stop offset="18%" stop-color="#f47d6f" />
+                <stop offset="62%" stop-color="#c63f35" />
+                <stop offset="100%" stop-color="#5e1411" />
+              </radialGradient>
+              <radialGradient id="hydrogen3d" cx="34%" cy="26%" r="72%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="55%" stop-color="#dfeceb" />
+                <stop offset="100%" stop-color="#899797" />
+              </radialGradient>
+              <linearGradient id="bond3d" x1="0%" x2="100%" y1="0%" y2="100%">
+                <stop offset="0%" stop-color="#f4ffff" stop-opacity="0.95" />
+                <stop offset="45%" stop-color="#8da2a5" stop-opacity="0.88" />
+                <stop offset="100%" stop-color="#263436" stop-opacity="0.92" />
+              </linearGradient>
             </defs>
-            <path class="reaction-path" d="M54 132 C156 56, 278 48, 388 96 C438 118, 478 132, 520 124" />
-            <g class="formula co2" transform="translate(34 88)">
-              <text x="0" y="0">O=C=O</text>
-              <circle class="atom oxygen" cx="20" cy="38" r="12" />
-              <circle class="atom carbon" cx="78" cy="38" r="12" />
-              <circle class="atom oxygen" cx="136" cy="38" r="12" />
-              <path class="bond" d="M34 34 L64 34 M34 42 L64 42 M92 34 L122 34 M92 42 L122 42" />
+            <path class="reaction-path" d="M48 178 C142 58, 256 70, 340 146 C418 216, 552 212, 672 86" />
+
+            <g class="equation-label">
+              <text x="32" y="38">2 CO2 + 6 H2</text>
+              <text x="452" y="38">C2H5OH + 3 H2O</text>
             </g>
-            <g class="arrow" transform="translate(214 120)">
-              <path d="M0 0 L82 0" />
-              <path d="M64 -14 L82 0 L64 14" />
+
+            <g class="molecule reactants" filter="url(#moleculeDepth)">
+              <g class="co2-model" transform="translate(42 82) rotate(-11 70 28)">
+                <path class="bond double" d="M34 25 L63 25 M34 33 L63 33 M86 25 L115 25 M86 33 L115 33" />
+                <circle class="sphere oxygen" cx="18" cy="29" r="17" />
+                <circle class="sphere carbon" cx="74" cy="29" r="18" />
+                <circle class="sphere oxygen" cx="131" cy="29" r="17" />
+              </g>
+              <g class="co2-model ghost" transform="translate(92 152) rotate(12 70 28)">
+                <path class="bond double" d="M34 25 L63 25 M34 33 L63 33 M86 25 L115 25 M86 33 L115 33" />
+                <circle class="sphere oxygen" cx="18" cy="29" r="15" />
+                <circle class="sphere carbon" cx="74" cy="29" r="16" />
+                <circle class="sphere oxygen" cx="131" cy="29" r="15" />
+              </g>
+              <g class="hydrogen-cloud">
+                <g transform="translate(196 72) rotate(-24)">
+                  <path class="bond small" d="M0 0 L34 0" />
+                  <circle class="sphere hydrogen" cx="0" cy="0" r="10" />
+                  <circle class="sphere hydrogen" cx="34" cy="0" r="10" />
+                </g>
+                <g transform="translate(230 126) rotate(18)">
+                  <path class="bond small" d="M0 0 L34 0" />
+                  <circle class="sphere hydrogen" cx="0" cy="0" r="10" />
+                  <circle class="sphere hydrogen" cx="34" cy="0" r="10" />
+                </g>
+                <g transform="translate(182 214) rotate(31)">
+                  <path class="bond small" d="M0 0 L34 0" />
+                  <circle class="sphere hydrogen" cx="0" cy="0" r="10" />
+                  <circle class="sphere hydrogen" cx="34" cy="0" r="10" />
+                </g>
+                <g class="background-h2" transform="translate(278 92) rotate(42)">
+                  <path class="bond small" d="M0 0 L28 0" />
+                  <circle class="sphere hydrogen" cx="0" cy="0" r="8" />
+                  <circle class="sphere hydrogen" cx="28" cy="0" r="8" />
+                </g>
+                <g class="background-h2" transform="translate(276 188) rotate(-18)">
+                  <path class="bond small" d="M0 0 L28 0" />
+                  <circle class="sphere hydrogen" cx="0" cy="0" r="8" />
+                  <circle class="sphere hydrogen" cx="28" cy="0" r="8" />
+                </g>
+                <g class="background-h2" transform="translate(218 250) rotate(12)">
+                  <path class="bond small" d="M0 0 L28 0" />
+                  <circle class="sphere hydrogen" cx="0" cy="0" r="8" />
+                  <circle class="sphere hydrogen" cx="28" cy="0" r="8" />
+                </g>
+              </g>
             </g>
-            <g class="formula ethanol" transform="translate(332 72)">
-              <text x="0" y="0">CH3-CH2-OH</text>
-              <circle class="atom carbon" cx="32" cy="58" r="13" />
-              <circle class="atom carbon" cx="96" cy="58" r="13" />
-              <circle class="atom oxygen" cx="158" cy="58" r="13" />
-              <circle class="atom hydrogen" cx="206" cy="58" r="9" />
-              <path class="bond" d="M46 58 L82 58 M110 58 L144 58 M172 58 L196 58" />
-              <path class="bond muted" d="M25 45 L5 25 M31 75 L16 104 M101 43 L112 20 M96 73 L96 101" />
-              <circle class="atom hydrogen tiny" cx="0" cy="20" r="7" />
-              <circle class="atom hydrogen tiny" cx="14" cy="110" r="7" />
-              <circle class="atom hydrogen tiny" cx="116" cy="14" r="7" />
-              <circle class="atom hydrogen tiny" cx="96" cy="109" r="7" />
+
+            <g class="arrow" transform="translate(304 154)">
+              <path d="M0 0 L92 0" />
+              <path d="M72 -18 L96 0 L72 18" />
+            </g>
+
+            <g class="molecule products" filter="url(#moleculeDepth)">
+              <g class="ethanol-model" transform="translate(412 78) rotate(-7 120 105)">
+                <path class="bond thick" d="M72 112 L140 92 L205 118 L250 95" />
+                <path class="bond side" d="M72 112 L44 72 M72 112 L42 146 M72 112 L86 164" />
+                <path class="bond side" d="M140 92 L136 42 M140 92 L170 48" />
+                <circle class="sphere hydrogen back" cx="136" cy="42" r="11" />
+                <circle class="sphere hydrogen back" cx="170" cy="48" r="11" />
+                <circle class="sphere hydrogen back" cx="44" cy="72" r="11" />
+                <circle class="sphere hydrogen" cx="42" cy="146" r="12" />
+                <circle class="sphere hydrogen" cx="86" cy="164" r="12" />
+                <circle class="sphere carbon" cx="72" cy="112" r="25" />
+                <circle class="sphere carbon" cx="140" cy="92" r="24" />
+                <circle class="sphere oxygen" cx="205" cy="118" r="24" />
+                <circle class="sphere hydrogen" cx="250" cy="95" r="16" />
+              </g>
+              <g class="water-products" transform="translate(520 234)">
+                <g transform="translate(0 0) rotate(-14)">
+                  <path class="bond water" d="M0 0 L-18 -20 M0 0 L22 -16" />
+                  <circle class="sphere oxygen small-atom" cx="0" cy="0" r="14" />
+                  <circle class="sphere hydrogen mini" cx="-18" cy="-20" r="8" />
+                  <circle class="sphere hydrogen mini" cx="22" cy="-16" r="8" />
+                </g>
+                <g transform="translate(70 -10) rotate(19)">
+                  <path class="bond water" d="M0 0 L-18 -20 M0 0 L22 -16" />
+                  <circle class="sphere oxygen small-atom" cx="0" cy="0" r="13" />
+                  <circle class="sphere hydrogen mini" cx="-18" cy="-20" r="7" />
+                  <circle class="sphere hydrogen mini" cx="22" cy="-16" r="7" />
+                </g>
+                <g transform="translate(126 18) rotate(-6)">
+                  <path class="bond water" d="M0 0 L-18 -20 M0 0 L22 -16" />
+                  <circle class="sphere oxygen small-atom" cx="0" cy="0" r="12" />
+                  <circle class="sphere hydrogen mini" cx="-18" cy="-20" r="7" />
+                  <circle class="sphere hydrogen mini" cx="22" cy="-16" r="7" />
+                </g>
+              </g>
             </g>
           </svg>
         </div>
@@ -356,6 +451,6 @@
       <p>Built for GitHub Pages. Last updated 2026.</p>
     </footer>
 
-    <script src="script.js?v=20260711b"></script>
+    <script src="script.js?v=20260712a"></script>
   </body>
 </html>
