@@ -31,6 +31,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0;
+  overflow-x: hidden;
 }
 
 body.nav-open {
@@ -128,20 +129,96 @@ a {
 }
 
 .hero {
+  position: relative;
   min-height: calc(100vh - 190px);
   display: flex;
   align-items: center;
   background-color: #030607;
-  background-image: url("assets/hero-lab-v2.png");
+  background-image: url("assets/hero-lab-v3.png");
   background-position: 59% center;
   background-size: cover;
   color: var(--white);
+  overflow: hidden;
 }
 
 .hero-content {
-  width: min(100%, var(--max));
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--max);
   margin: 0 auto;
   padding: 52px 28px 36px;
+}
+
+.chemistry-overlay {
+  position: absolute;
+  top: 132px;
+  right: max(34px, calc((100vw - var(--max)) / 2));
+  z-index: 1;
+  width: min(36vw, 520px);
+  pointer-events: none;
+  opacity: 0.86;
+}
+
+.chemistry-overlay svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.reaction-path {
+  fill: none;
+  stroke: rgba(88, 226, 223, 0.56);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  filter: url("#softGlow");
+}
+
+.formula text {
+  fill: rgba(238, 248, 247, 0.82);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.atom {
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 1.5;
+}
+
+.atom.carbon {
+  fill: #5f6b6d;
+}
+
+.atom.oxygen {
+  fill: #d34d3f;
+}
+
+.atom.hydrogen {
+  fill: #f1f7f6;
+}
+
+.atom.tiny {
+  stroke-width: 1;
+}
+
+.bond,
+.arrow path {
+  fill: none;
+  stroke: rgba(238, 248, 247, 0.74);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bond.muted {
+  stroke: rgba(238, 248, 247, 0.42);
+  stroke-width: 2;
+}
+
+.arrow path {
+  stroke: rgba(88, 226, 223, 0.8);
 }
 
 .hero h1 {
@@ -226,7 +303,8 @@ a {
 
 .profile-strip dl {
   display: grid;
-  width: min(100%, var(--max));
+  width: 100%;
+  max-width: var(--max);
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   margin: 0 auto;
@@ -278,7 +356,8 @@ a {
 
 .section-grid {
   display: grid;
-  width: min(100%, var(--max));
+  width: 100%;
+  max-width: var(--max);
   grid-template-columns: 290px 1fr;
   gap: 64px;
   margin: 0 auto;
@@ -332,7 +411,8 @@ h2 {
 .focus-grid,
 .venture-grid {
   display: grid;
-  width: min(100%, var(--max));
+  width: 100%;
+  max-width: var(--max);
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   margin: 58px auto 0;
@@ -466,7 +546,8 @@ h2 {
 }
 
 .contact-panel {
-  width: min(100%, var(--max));
+  width: 100%;
+  max-width: var(--max);
   margin: 0 auto;
   padding: 58px;
   background: var(--carbon);
@@ -550,6 +631,10 @@ h2 {
   .hero {
     min-height: calc(100vh - 190px);
     background-position: 48% center;
+  }
+
+  .chemistry-overlay {
+    display: none;
   }
 
   .hero h1 {

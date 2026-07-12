@@ -7,7 +7,8 @@ Static GitHub Pages site for Tian Ren.
 - `index.html` - page content and structure
 - `styles.css` - responsive visual system
 - `script.js` - mobile navigation, active section state, and email copy action
-- `assets/hero-lab-v2.png` - generated scientific hero image used by the homepage
+- `assets/hero-lab-v3.png` - generated scientific hero background used by the homepage
+- `assets/hero-lab-v2.png` - earlier generated hero image kept for reference
 - `assets/hero-lab.png` - earlier generated hero image kept for reference
 - `assets/favicon.svg` - compact TR site icon
 

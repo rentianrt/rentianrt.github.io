@@ -9,8 +9,8 @@
     />
     <title>Tian Ren | Chemical Engineering Researcher</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" as="image" href="assets/hero-lab-v2.png" />
-    <link rel="stylesheet" href="styles.css?v=20260709d" />
+    <link rel="preload" as="image" href="assets/hero-lab-v3.png" />
+    <link rel="stylesheet" href="styles.css?v=20260711b" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -50,6 +50,44 @@
             <a class="button button-primary" href="#research">Read research</a>
             <a class="button button-secondary" href="mailto:tianr@stanford.edu">Email Tian</a>
           </div>
+        </div>
+        <div class="chemistry-overlay" aria-hidden="true">
+          <svg viewBox="0 0 560 260" role="img">
+            <defs>
+              <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <path class="reaction-path" d="M54 132 C156 56, 278 48, 388 96 C438 118, 478 132, 520 124" />
+            <g class="formula co2" transform="translate(34 88)">
+              <text x="0" y="0">O=C=O</text>
+              <circle class="atom oxygen" cx="20" cy="38" r="12" />
+              <circle class="atom carbon" cx="78" cy="38" r="12" />
+              <circle class="atom oxygen" cx="136" cy="38" r="12" />
+              <path class="bond" d="M34 34 L64 34 M34 42 L64 42 M92 34 L122 34 M92 42 L122 42" />
+            </g>
+            <g class="arrow" transform="translate(214 120)">
+              <path d="M0 0 L82 0" />
+              <path d="M64 -14 L82 0 L64 14" />
+            </g>
+            <g class="formula ethanol" transform="translate(332 72)">
+              <text x="0" y="0">CH3-CH2-OH</text>
+              <circle class="atom carbon" cx="32" cy="58" r="13" />
+              <circle class="atom carbon" cx="96" cy="58" r="13" />
+              <circle class="atom oxygen" cx="158" cy="58" r="13" />
+              <circle class="atom hydrogen" cx="206" cy="58" r="9" />
+              <path class="bond" d="M46 58 L82 58 M110 58 L144 58 M172 58 L196 58" />
+              <path class="bond muted" d="M25 45 L5 25 M31 75 L16 104 M101 43 L112 20 M96 73 L96 101" />
+              <circle class="atom hydrogen tiny" cx="0" cy="20" r="7" />
+              <circle class="atom hydrogen tiny" cx="14" cy="110" r="7" />
+              <circle class="atom hydrogen tiny" cx="116" cy="14" r="7" />
+              <circle class="atom hydrogen tiny" cx="96" cy="109" r="7" />
+            </g>
+          </svg>
         </div>
       </section>
 
@@ -318,6 +356,6 @@
       <p>Built for GitHub Pages. Last updated 2026.</p>
     </footer>
 
-    <script src="script.js?v=20260709d"></script>
+    <script src="script.js?v=20260711b"></script>
   </body>
 </html>
